@@ -36,11 +36,12 @@ LEFT JOIN enclos_animaux
 ON enclos.id = enclos_animaux.id_enclot
 WHERE niveau = "moyen"
 
-story 6 bloquer
+story 6 
 
-SELECT animaux.nom , animaux.espece , animaux.sexe, MAX(enclos_animaux.date_entree) ,MIN(enclos_animaux.date_entree)
+SELECT animaux.nom , animaux.espece , animaux.sexe,enclos_animaux.date_entree
 FROM animaux
 LEFT JOIN enclos_animaux
 ON animaux.id = enclos_animaux.id_animal
-WHERE espece = "girafe"
-AND sexe = "M"
+WHERE espece = "faucon"
+AND sexe = "M" 
+ORDER BY `enclos_animaux`.`date_entree`  ASC LIMIT 2
